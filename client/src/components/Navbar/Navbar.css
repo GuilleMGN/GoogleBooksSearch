@@ -1,0 +1,32 @@
+/* NAV BAR SETTINGS */
+#logo {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    /* Typography */
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    /* Visual */
+    background: #333333;
+  }
+.navbar-light .navbar-nav .nav-link:hover {
+    color:rgba(144, 199, 203, 0.7) !important;
+  }
+.navbar-light .navbar-nav .nav-link {
+    color: white !important;
+  }
+/* Darkens selected nav */
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, 
+.navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgb(144, 199, 203) !important;
+  }
+/* Navbar color settings */
+.navbar {
+    color: #ffffff;
+    background: #444444;
+    border: 10px;
+  }
+/* Increases brand width */
+.navbar-brand {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
