@@ -5,7 +5,7 @@ function SavedBooks() {
     return (
         <div>
             <h2 className="center">Saved Books</h2>
-            <Card btn1={"View"} btn2={"Delete"} />
+            <Card btn1={"View"} btn3={"Delete"} />
         </div>
     );
 }

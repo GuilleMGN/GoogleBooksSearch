@@ -5,7 +5,7 @@ import API from "../utils/API";
 
 class SearchBooks extends Component {
     state = {
-        query: "The Hunger Games",
+        query: "",
         books: []
     }
     handleFormSubmit = () => {
@@ -30,8 +30,9 @@ class SearchBooks extends Component {
             query: e.target.value
         })
     }
-    handleBookSave = (id) => {
-        console.log(id);
+    handleBookSave = (book) => {
+        API.saveBook(book);
+        console.log(book);
     }
     render() {
         return (
@@ -46,11 +47,15 @@ class SearchBooks extends Component {
                         return (
                             <Card
                                 key={id}
+                                id={id}
                                 title={volumeInfo.title}
                                 authors={volumeInfo.authors}
                                 description={volumeInfo.description}
+                                link={volumeInfo.infoLink}
                                 image={volumeInfo.imageLinks.thumbnail}
-                            // btn1={handleBookSave={this.handleBookSave(id)}}
+                                handleBookSave={this.handleBookSave}
+                                btn1={"View"}
+                                btn2={"Save"}
                             // BTN2={() => {
                             //     return <button className="btn btn-outline-info" onClick={this.handleBookSave(id)}>SAVE</button>
                             // }} 

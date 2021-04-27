@@ -9,3 +9,15 @@
     margin: 20px;
     object-fit: fill;
 }
+@media only screen and (max-width: 992px) {
+    .book-img {
+        max-height: 133px;
+        max-width: 103px;
+        margin: 20px;
+        object-fit: fill;
+    }
+  }
+.overflow {
+    height: 167px;
+    overflow: auto;
+}
