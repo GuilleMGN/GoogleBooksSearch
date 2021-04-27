@@ -6,3 +6,10 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.center {
+  text-align: center;
+}
+.end {
+  text-align: end;
+  justify-content: end;
+}

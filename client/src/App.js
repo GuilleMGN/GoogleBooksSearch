@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SavedBooks from "./pages/SavedBooks";
 import SearchBooks from "./pages/SearchBooks";
 import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
+        <Header />
         <Switch>
         <Route exact path={["/", "/search"]}>
             <SearchBooks />

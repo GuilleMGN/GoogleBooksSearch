@@ -1,8 +1,12 @@
 import React from "react";
+import Card from "../components/Card"
 
 function SavedBooks() {
     return (
-        <h1>Saved Books</h1>
+        <div>
+            <h2 className="center">Saved Books</h2>
+            <Card btn1={"View"} btn2={"Delete"} />
+        </div>
     );
 }
 

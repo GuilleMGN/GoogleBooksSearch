@@ -1,8 +1,13 @@
 import React from "react";
+import Searchbar from "../components/Searchbar"
+import Card from "../components/Card"
 
 function SearchBooks() {
     return (
-        <h1>Search Books</h1>
+        <div>
+            <Searchbar />
+            <Card btn1={"View"} btn2={"Save"} />
+        </div>
     );
 }
 
