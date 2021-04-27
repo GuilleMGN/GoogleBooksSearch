@@ -1,23 +1,23 @@
 import React from "react";
-import "./Card.css"
+import "./Card.css";
 
-function Card(props) {
+function Card(props, handleBookSave) {
     return (
         <div className="container">
             <div className="cardBorder">
                 <div className="row">
                     <div className="col-lg-3">
-                        <img className="book-img" src="https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg" alt="book" />
+                        <img className="book-img" src={props.image} alt={props.title} />
                     </div>
                     <div className="col-lg-9">
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="end">
-                                    <a className="btn btn-outline-info">{props.btn1}</a>
-                                    <a className="btn btn-outline-secondary">{props.btn2}</a>
+                                    <button className="btn btn-outline-info" onClick={() => props.handleBookSave(props)}>{props.btn1}</button>                                    
                                 </div>
-                                <h4>Title <span> - Author</span></h4>
-                                <h6>Description</h6>
+                                <h4>{props.title}</h4>
+                                <h5>{props.authors}</h5>
+                                <h6>{props.description}</h6>
                             </div>
                         </div>
                     </div>
