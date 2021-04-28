@@ -1,7 +1,7 @@
 import React from "react";
 import "./Card.css";
 
-function Card(props, handleBookSave) {
+function Card(props) {
     return (
         <div className="container">
             <div className="cardBorder">
@@ -14,7 +14,8 @@ function Card(props, handleBookSave) {
                             <div className="col-lg-12 col-md-12">
                                 <div className="end">
                                     <button className="btn btn-outline-info" onClick={() => window.open(props.link, "_blank")} >{props.btn1}</button>
-                                    <button className="btn btn-outline-info" onClick={() => handleBookSave(props)}>{props.btn2}</button>
+                                    {props.btn2}
+                                    {/* <button className="btn btn-outline-info" onClick={() => props.handleBookSave(props)}>{props.btn2}</button> */}
                                     {/* <button className="btn btn-outline-info" onClick={() => props.handleBookDelete(props)}>{props.btn3}</button> */}
                                 </div>
                                 <h4>{props.title}</h4>

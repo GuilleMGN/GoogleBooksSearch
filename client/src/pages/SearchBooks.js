@@ -30,9 +30,19 @@ class SearchBooks extends Component {
             query: e.target.value
         })
     }
-    handleBookSave = (book) => {
-        API.saveBook(book);
-        console.log(book);
+    handleBookSave = (id) => {
+        const book = this.state.books.find((book) => book.id === id);
+        API.saveBook({
+            id: book.id,
+            title: book.volumeInfo.title,
+            authors: book.volumeInfo.authors,
+            description: book.volumeInfo.description,
+            link: book.volumeInfo.infoLink,
+            image: book.volumeInfo.thumbnail
+        }).then(() => {
+            alert("Book Saved");
+            this.search();
+        });
     }
     render() {
         return (
@@ -53,9 +63,15 @@ class SearchBooks extends Component {
                                 description={volumeInfo.description}
                                 link={volumeInfo.infoLink}
                                 image={volumeInfo.imageLinks.thumbnail}
-                                handleBookSave={this.handleBookSave}
                                 btn1={"View"}
-                                btn2={"Save"}
+                                btn2={() => {
+                                    <button
+                                        onClick={() => this.handleBookSave(volumeInfo.id)}
+                                        className="btn btn-outline-info" >
+                                        Save
+                                    </button>
+                                }
+                                }
                             // BTN2={() => {
                             //     return <button className="btn btn-outline-info" onClick={this.handleBookSave(id)}>SAVE</button>
                             // }} 
