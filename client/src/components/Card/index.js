@@ -14,7 +14,7 @@ function Card(props) {
                             <div className="col-lg-12 col-md-12">
                                 <div className="end">
                                     <button className="btn btn-outline-info" onClick={() => window.open(props.link, "_blank")} >{props.btn1}</button>
-                                    {props.btn2}
+                                    <button onClick={() => props.handleBookSave(props.id)} className="btn btn-outline-info" >{props.btn2}</button>
                                     {/* <button className="btn btn-outline-info" onClick={() => props.handleBookSave(props)}>{props.btn2}</button> */}
                                     {/* <button className="btn btn-outline-info" onClick={() => props.handleBookDelete(props)}>{props.btn3}</button> */}
                                 </div>

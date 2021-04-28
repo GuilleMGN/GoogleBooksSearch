@@ -31,6 +31,7 @@ class SearchBooks extends Component {
         })
     }
     handleBookSave = (id) => {
+        console.log("IVE BEEN CLICKED");
         const book = this.state.books.find((book) => book.id === id);
         API.saveBook({
             id: book.id,
@@ -64,17 +65,8 @@ class SearchBooks extends Component {
                                 link={volumeInfo.infoLink}
                                 image={volumeInfo.imageLinks.thumbnail}
                                 btn1={"View"}
-                                btn2={() => {
-                                    <button
-                                        onClick={() => this.handleBookSave(volumeInfo.id)}
-                                        className="btn btn-outline-info" >
-                                        Save
-                                    </button>
-                                }
-                                }
-                            // BTN2={() => {
-                            //     return <button className="btn btn-outline-info" onClick={this.handleBookSave(id)}>SAVE</button>
-                            // }} 
+                                btn2={"Save"}
+                                handleBookSave={this.handleBookSave}
                             />
                         )
                     })
