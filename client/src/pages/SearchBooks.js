@@ -40,9 +40,9 @@ class SearchBooks extends Component {
             description: book.volumeInfo.description,
             link: book.volumeInfo.infoLink,
             image: book.volumeInfo.thumbnail
-        }).then(() => {
-            alert("Book Saved");
-            this.search();
+        // }).then(() => {
+        //     alert("Book Saved");
+        //     this.search();
         });
     }
     render() {
