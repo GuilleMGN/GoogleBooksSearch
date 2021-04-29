@@ -11,7 +11,7 @@ export default {
     getSaved: function() {
         return axios.get("/api/books");
     },
-    delete: function(id) {
+    remove: function(id) {
         return axios.delete("/api/books" + id);
     }
 }

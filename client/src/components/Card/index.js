@@ -15,8 +15,6 @@ function Card(props) {
                                 <div className="end">
                                     <button className="btn btn-outline-info" onClick={() => window.open(props.link, "_blank")} >{props.btn1}</button>
                                     <button onClick={() => props.handleBookSave(props.id)} className="btn btn-outline-info" >{props.btn2}</button>
-                                    {/* <button className="btn btn-outline-info" onClick={() => props.handleBookSave(props)}>{props.btn2}</button> */}
-                                    {/* <button className="btn btn-outline-info" onClick={() => props.handleBookDelete(props)}>{props.btn3}</button> */}
                                 </div>
                                 <h4>{props.title}</h4>
                                 <h5>{props.authors}</h5>
