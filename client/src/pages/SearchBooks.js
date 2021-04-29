@@ -18,6 +18,7 @@ class SearchBooks extends Component {
                     books: response.data.items
                 })
             })
+            .catch(err => console.log(err));
     }
     handleKeyDown = (e) => {
         if (e.keyCode === 13) {
@@ -25,25 +26,31 @@ class SearchBooks extends Component {
         }
     }
     handleInputChange = (e) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         this.setState({
             query: e.target.value
         })
     }
     handleBookSave = (id) => {
-        console.log("IVE BEEN CLICKED");
+        console.log("Saving book ID ", id);
         const book = this.state.books.find((book) => book.id === id);
+        console.log(book);
         API.saveBook({
             id: book.id,
             title: book.volumeInfo.title,
-            authors: book.volumeInfo.authors,
+            authors: book.volumeInfo.authors[0],
             description: book.volumeInfo.description,
             link: book.volumeInfo.infoLink,
-            image: book.volumeInfo.thumbnail
-        // }).then(() => {
-        //     alert("Book Saved");
-        //     this.search();
-        });
+            image: book.volumeInfo.imageLinks.thumbnail
+            // id: 1,
+            // title: "Hunger Games",
+            // authors: "TEST",
+            // description: "TEST",
+            // link: "TEST",
+            // image: "TEST"
+        })
+            .then(res => console.log("Book Saved", res))
+            .catch(err => console.log(err));
     }
     render() {
         return (

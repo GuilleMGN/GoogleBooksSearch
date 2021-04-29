@@ -10,6 +10,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 function App() {
   return (
     <div className="App">
+      <div className="hide">{document.title = "Google Books Search"}</div>
       <Router>
         <Navbar />
         <Header />
